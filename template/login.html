@@ -1,0 +1,18 @@
+{% extends 'ACbase.html'%}
+<title>Login</title>
+
+
+ {% block content%}
+<h1>Welcome Login ...</h1>
+<br/>
+<div class="form-group center">
+	<form action="login" method="POST">
+		{% csrf_token%}
+		<input type="text" name="user_name" placeholder="User name">
+		<input type="Password" name="password" placeholder="Password">
+		<br/><br/><br/>
+		<center><button  class="btn btn-success">Login</button></center>
+	</form>
+</div>
+
+{%endblock content%}

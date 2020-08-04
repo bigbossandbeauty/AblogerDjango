@@ -1,0 +1,17 @@
+
+{% extends 'base.html'%}
+
+{% block title%}
+CREATE A NEW POST CATEGORY
+{%endblock%}
+ {% block content%}
+
+<h1>Add New CATEGORY</h1>
+<br/>
+<div class="form-group">
+	<form method="POST">
+		{% csrf_token%}
+		{{form.as_p}}
+<button class="btn btn-primary">ADD NEW</button>
+</div>
+{%endblock content%}

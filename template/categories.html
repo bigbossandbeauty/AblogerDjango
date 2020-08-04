@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+ {% block title%}
+        category:{{cats}}
+      {%endblock%}
+ {% block content%}
+ {{cats}}
+  {% if category_post%}
+<h1>Categories:{{cats}}</h1>
+<ul>
+  {% for post in category_post%}
+  <li><a href="{% url 'article-detail' post.pk %}" class="btn btn-link">
+  {{post.title}}</a> -{{post.category}}-{{post.author.first_name}}
+  {{post.author.last_name}} <br/>
+  
+  {{post.body|slice:":200"|safe}}...
+  {%endfor%}
+</li>
+</ul>
+
+{% else%}
+
+<h2>Sorry this page does not exists!!!</h2>
+{%endif%}
+
+{%endblock content%}
